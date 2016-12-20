@@ -1,0 +1,27 @@
+{
+  "name": "blueoak-ui",
+  "description": "A collection of configurable Sass and Angular components for BlueOak-based projects",
+  "main": [
+    "dist/blue-oak-ui.min.js",
+    "dist/fonts/bo-icons.ttf",
+    "dist/fonts/bo-icons.woff"
+  ],
+  "license": "MIT",
+  "authors": [
+    "PointSource <blueoak@pointsource.com>"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
+    "angular-snap": "~1.8.4",
+    "font-awesome": "fontawesome#~4.5.0",
+    "foundation-sites": "~6.2.0",
+    "normalize-css": "normalize.css#~3.0.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.7"
+  },
+  "resolutions": {
+    "jquery": "~2.2.0"
+  }
+}

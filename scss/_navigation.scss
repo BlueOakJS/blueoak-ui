@@ -1,0 +1,81 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+/**************************************************************************************************
+ bo-menu
+**************************************************************************************************/
+ul.bo-menu {
+	text-align: center;
+	font-weight: $bo-menu-font-weight;
+	color: $bo-menu-color;
+	& li.bo-menu-item {
+		text-align: $bo-menu-item-text-align;
+
+		&:hover {
+			background-color: $dropdownmenu-background;
+
+			&.is-dropdown-submenu-parent, &.is-dropdown-submenu-parent > a {
+				background-color: $bo-menu-background-color;
+				color: lighten($primary-color, 25);
+			}
+		}
+
+		@if ($bo-menu-use-custom-arrow) {
+			&.is-dropdown-submenu-parent {
+				& > a:after {
+					content: '\0049';
+			    display: inline-block;
+			    font-family: 'bo-icons';
+			    font-style: normal;
+			    font-weight: normal;
+					font-size: 0.8rem;
+			    line-height: 1;
+			    -webkit-font-smoothing: antialiased;
+			    float: none;
+			    margin-left: 18px;
+			    margin-top: 0px;
+			    margin-bottom: 1px;
+					vertical-align: middle;
+	    	}
+			}
+		}
+
+		// nested
+		& .bo-menu li {
+			 &:hover {
+			 	 	background-color: lighten($dropdownmenu-background, 10);
+
+			 	 	// Fixes :hover background-color overriding our border radius.
+			 	 	&:first-child {
+						border-top-left-radius: $bo-menu-dropdown-border-radius;
+						border-top-right-radius: $bo-menu-dropdown-border-radius;
+					}
+					&:last-child {
+						border-bottom-left-radius: $bo-menu-dropdown-border-radius;
+						border-bottom-right-radius: $bo-menu-dropdown-border-radius;
+					}
+			 }
+		}
+	}
+
+	& ul.submenu {
+		border-radius: $bo-menu-dropdown-border-radius;
+
+		&.vertical {
+			// gap between menu and dropdown
+			transform: translateY($bo-menu-dropdown-gap);
+		}
+	}
+
+	& li.bo-title {
+		@include menu-text;
+		font-weight: $bo-menu-title-font-weight;
+		display: inline-block;
+
+		&:hover {
+			background-color: inherit;
+		}
+	}
+}

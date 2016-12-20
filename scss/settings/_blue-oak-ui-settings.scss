@@ -1,0 +1,230 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+// BlueOak UI Settings
+// --------==---------
+
+// Table of Contents:
+//
+// Content:
+//   1. bo-blocklist
+//   2. bo-card
+//   3. bo-badge
+//   4. bo-tabs
+//   5. bo-accordion
+//   6. bo-topbar
+//
+// Controls:
+//   7. bo-button
+//   8. bo-button-group
+//   9. bo-radio-group, bo-checkbox-group
+//   10. bo-input
+//   11. bo-search
+//   12. bo-switch
+//   13. bo-slider
+//   14. bo-select
+//   15. bo-progress-meter
+//
+// Callouts:
+//   16. bo-modal
+//   17. bo-notification
+//
+// Layout:
+//   18. bo-panel-top
+//   19. bo-panel-side
+//   20. bo-panel-bottom
+//
+// Navigation:
+//   21. bo-menu-bar-horizontal, bo-menu-bar-vertical
+//   22. bo-menu-bar-groups
+//   23. bo-title-bar
+//   24. bo-action-sheet
+
+
+// Content:
+// -------
+/**************************************************************************************************
+	1. bo-blocklist
+**************************************************************************************************/
+$bo-blocklist-item-height: rem-calc(60px) !default;
+$bo-blocklist-color: $primary-color !default;
+$bo-blocklist-font-size: rem-calc(24px) !default;
+$bo-blocklist-padding: rem-calc(16px) !default;
+
+/**************************************************************************************************
+	2. bo-card
+**************************************************************************************************/
+$bo-card-margin: 0 !default;
+$bo-card-background-color: $primary-color !default;
+$bo-card-header-font-weight: bold !default;
+$bo-card-image-padding: rem-calc(10px) !default;
+$bo-card-header-padding: rem-calc(10px) !default;
+$bo-card-content-padding: rem-calc(10px) !default;
+
+/**************************************************************************************************
+	3. bo-badge
+**************************************************************************************************/
+$bo-badge-font-size-large: 12px !default;
+$bo-badge-font-size-xlarge: 16px !default;
+
+/**************************************************************************************************
+ 	4. bo-tabs
+**************************************************************************************************/
+$bo-tab-item-font-size: rem-calc(24) !default;
+$bo-tab-item-active: darken($primary-color, 10) !default;
+$bo-tab-item-color: $white !default;
+
+/**************************************************************************************************
+ 	5. bo-accordion
+**************************************************************************************************/
+$bo-accordion-item-font-size: rem-calc(24) !default;
+$bo-accordion-content-font-size: rem-calc(24) !default;
+$bo-accordion-border-radius: 0 !default;
+$bo-accordion-border: none !default;
+
+/**************************************************************************************************
+  6. bo-topbar
+**************************************************************************************************/
+$bo-topbar-link-color: foreground($primary-color) !default;
+$bo-topbar-color: $white !default;
+$bo-topbar-icon-size: 1.5rem !default;
+$bo-topbar-icon-padding: #{$bo-topbar-icon-size / 3} #{$bo-topbar-icon-size / 3} !default;
+$bo-topbar-font-size: rem-calc(16) !default;
+$bo-topbar-height: 3rem !default;
+
+// Controls:
+// --------
+/**************************************************************************************************
+ 	7. bo-button
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+ 	8. bo-button-group
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+ 	9. bo-radio-group, bo-checkbox-group
+**************************************************************************************************/
+$bo-radio-label-margin: 0 rem-calc(27) 0 rem-calc(10) !default;
+$bo-radio-label-color: $primary-color !default;
+$bo-radio-icon-color: $primary-color !default;
+$bo-radio-icon-size: rem-calc(27) !default;
+
+$bo-checkbox-label-margin: $bo-radio-label-margin !default;
+$bo-checkbox-label-color: $bo-radio-label-color !default;
+$bo-checkbox-icon-color: $bo-radio-icon-color !default;
+$bo-checkbox-icon-size: $bo-radio-icon-size !default;
+
+
+/**************************************************************************************************
+ 	10. bo-input
+**************************************************************************************************/
+$bo-input-placeholder-style: normal !default;
+$bo-input-placeholder-color: scale-color($primary-color, $lightness: 30%) !default;
+$bo-input-padding: $form-spacing / 2 rem-calc(14) !default;
+
+/**************************************************************************************************
+ 	11. bo-search
+**************************************************************************************************/
+$bo-search-placeholder-style: italic !default;
+$bo-search-placeholder-color: $bo-input-placeholder-color !default;
+$bo-search-border: 2px solid $black !default;
+$bo-search-border-focus: 2px solid $black !default;
+$bo-search-icon-padding-left: rem-calc(10) !default;
+$bo-search-icon-padding-right: rem-calc(10) !default;
+$bo-search-font-size: $input-font-size !default;
+$bo-search-icon-size: $bo-search-font-size !default;
+
+/**************************************************************************************************
+ 	12. bo-switch
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+ 	13. bo-slider
+**************************************************************************************************/
+$bo-slider-radius: rem-calc(6.5px) !default;
+$bo-slider-box-shadow: 1px 1px 1px rgba($primary-color, 0.4) !default;
+
+/**************************************************************************************************
+ 	14. bo-select
+**************************************************************************************************/
+$bo-select-height: rem-calc(42) !default;
+$bo-select-option-height: $bo-select-height !default;
+$bo-select-background-color: $white !default;
+$bo-select-color: $primary-color !default;
+$bo-select-hover-background-color: $white !default;
+$bo-select-border-radius: $global-radius !default;
+$bo-select-text-align: left !default;
+$bo-select-outline: none !default;
+$bo-select-open-background-color: darken($white, 10) !default;
+$bo-select-background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 31 14" enable-background="new 0 0 31 14" xml:space="preserve"> <polygon fill="#373737" points="9.3,0.5 18.5,0.5 13.9,7 9.3,13.6 4.7,6.9 0.1,0.5 "/></svg>') !default;
+$bo-select-padding: rem-calc(8) rem-calc(12) !default;
+$bo-select-background-image-size: 23px 23px !default;
+$bo-select-option-background-color: $primary-color !default;
+$bo-select-option-margin: 0 !default;
+$bo-select-option-color: $white !default;
+$bo-select-option-hover-background-color: lighten($primary-color, 30) !default;
+// Select option icon/anchor settings
+$bo-select-option-icon-left: rem-calc(7) !default;
+$bo-select-option-a-padding-left: rem-calc(16) !default;
+$bo-select-option-icon-color: $white !default;
+
+/**************************************************************************************************
+ 	15. bo-progress-meter
+**************************************************************************************************/
+$bo-progress-meter-radius: $progress-radius !default;
+$bo-progress-meter-inner-radius: 0 !default;
+$bo-progress-meter-transition: 300ms linear width !default;
+
+
+// Callouts:
+// --------
+/**************************************************************************************************
+ 	16. bo-modal
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+ 	17. bo-notification
+**************************************************************************************************/
+$bo-notification-transition-duration: 300ms !default;
+$bo-notification-title-height: 52px !default;
+$bo-notification-height: 200px + $bo-notification-title-height !default;
+$bo-notification-offscreen: 25px + $bo-notification-height !default;
+
+// Layout:
+// ------
+/**************************************************************************************************
+ 	18. bo-panel-top
+**************************************************************************************************/
+$bo-header-height: $bo-topbar-height !default;
+
+/**************************************************************************************************
+ 	19. bo-panel-side
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+ 	20. bo-panel-bottom
+**************************************************************************************************/
+$bo-footer-height: $bo-header-height !default;
+
+// Navigation:
+// ----------
+/**************************************************************************************************
+ 	21. bo-menu-bar-horizontal, bo-menu-bar-vertical
+**************************************************************************************************/
+$bo-menu-background-color: $topbar-background !default;
+$bo-menu-color: foreground($bo-menu-background-color) !default;
+$bo-menu-font-weight: $global-weight-normal !default;
+$bo-menu-dropdown-gap: 1px !default;
+$bo-menu-dropdown-border-radius: $global-radius !default;
+$bo-menu-use-custom-arrow: true !default;
+$bo-menu-item-text-align: left !default;
+$bo-menu-title-font-weight: $global-weight-bold !default;
+

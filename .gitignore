@@ -1,0 +1,9 @@
+*.*.swp
+node_modules
+bower_components
+dist/vendor
+dist/css
+coverage.lcov
+.idea
+
+js/templates.module.js

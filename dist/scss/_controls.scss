@@ -1,0 +1,335 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+/**************************************************************************************************
+ bo-button
+**************************************************************************************************/
+// Supplement foundation buttons styles with styles we
+// commonly use but do not exist in _foundation-settings.scss
+// as defaults.
+button, .button {
+  &:active {
+    background-color: lighten($primary-color, 30);
+    color: foreground($primary-color);
+  }
+  &.hollow{
+    &:hover {
+      background-color: lighten($primary-color, 70);
+    }
+    &:active {
+      background-color: lighten($primary-color, 48);
+    }
+  }
+
+  // Handle our custom hit states for foundation colors
+  @each $name, $color in $foundation-palette {
+    @if $name != primary {
+      &.#{$name} {
+        &:active {
+          background-color: lighten($color, 30);
+          color: foreground($color);
+        }
+      }
+    }
+  }
+}
+
+/**************************************************************************************************
+ bo-button-group
+**************************************************************************************************/
+.button-group {
+  & .button:first-child {
+    border-top-left-radius: $button-radius;
+    border-bottom-left-radius: $button-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  & .button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+
+  & .button:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: $button-radius;
+    border-bottom-right-radius: $button-radius;
+  }
+
+  & .hollow.button:not(:last-child) {
+    border-right: 1px;
+  }
+}
+
+/**************************************************************************************************
+ bo-radio-group, bo-checkbox-group
+**************************************************************************************************/
+@mixin bo-selectable-input ($item, $label, $label-color, $label-margin, $icon-size, $icon-color) {
+  #{$item} {
+    display: inline-block;
+    cursor: pointer;
+
+    & > * {
+      display: inline-block;
+    }
+
+    label {
+      // necessary to keep hidden input nearby
+      position: relative;
+
+      // necessary to work around fastclick bug
+      // https://github.com/ftlabs/fastclick/issues/60
+      & > * {
+        display: inline-block;
+        pointer-events: none;
+      }
+    }
+
+    #{$label} {
+      float: left;
+      color: $label-color;
+      margin: $label-margin;
+    }
+
+    i {
+      float: left;
+      font-size: $icon-size;
+      color: $icon-color;
+    }
+  }
+}
+
+@include bo-selectable-input(
+  $item: 'bo-radio',
+  $label: '.bo-radio-label',
+  $label-color: $bo-radio-label-color,
+  $label-margin: $bo-radio-label-margin,
+  $icon-size: $bo-radio-icon-size,
+  $icon-color: $bo-radio-icon-color
+);
+
+@include bo-selectable-input(
+  $item: 'bo-checkbox',
+  $label: '.bo-checkbox-label',
+  $label-color: $bo-checkbox-label-color,
+  $label-margin: $bo-checkbox-label-margin,
+  $icon-size: $bo-checkbox-icon-size,
+  $icon-color: $bo-checkbox-icon-color
+);
+
+bo-radio-group {
+  display: inline-block;
+}
+
+/**************************************************************************************************
+ bo-input
+**************************************************************************************************/
+@mixin input-placeholder {
+    // https://css-tricks.com/almanac/selectors/p/placeholder-shown/
+    &::-webkit-input-placeholder { /* Safari, Chrome and Opera */
+      @content;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      @content;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+      @content;
+    }
+
+    &:-ms-input-placeholder { /* IE 10+ */
+      @content;
+    }
+
+    &::-ms-input-placeholder { /* Edge */
+      @content;
+    }
+
+    &:placeholder-shown { /* Standard one last! */
+      @content;
+    }
+}
+
+#{text-inputs()} {
+  padding: $bo-input-padding;
+
+  @include input-placeholder {
+    font-style: $bo-input-placeholder-style;
+    color: $bo-input-placeholder-color;
+  }
+}
+
+/**************************************************************************************************
+ bo-search
+**************************************************************************************************/
+bo-search {
+  position: relative;
+  display: block;
+
+  i {
+    pointer-events: none;
+
+    &:before {
+      margin-left: $bo-search-icon-padding-left;
+      position: absolute;
+      display: inline-block;
+      color: $bo-search-placeholder-color;
+      font-size: $bo-search-icon-size;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    & + input[type="search"] {
+      padding-left: $bo-search-icon-padding-left + $bo-search-icon-padding-right + $bo-search-icon-size;
+    }
+  }
+
+  input[type="search"] {
+    border: $bo-search-border;
+    font-size: $bo-search-font-size;
+
+    @include input-placeholder {
+      font-style: $bo-search-placeholder-style;
+      color: $bo-search-placeholder-color;
+    }
+
+    &:focus {
+      border: $bo-search-border-focus;
+    }
+  }
+}
+
+/**************************************************************************************************
+ bo-switch
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+ bo-slider
+**************************************************************************************************/
+bo-slider {
+  .slider, .slider-fill {
+    // The foundation $slider-radius is only applied to the slider handle.
+    // We add an additional variable for the background border-radius.
+    border-radius: $bo-slider-radius;
+    box-shadow: $bo-slider-box-shadow;
+  }
+}
+
+/**************************************************************************************************
+ bo-select
+**************************************************************************************************/
+@mixin bo-select-style {
+  @include form-select;
+  @include button-expand(true);
+  @include button-hollow;
+  @include button-style($bo-select-background-color, $bo-select-hover-background-color, $bo-select-color);
+  height: $bo-select-height;
+  border-radius: $bo-select-border-radius;
+  color: $bo-select-color;
+  padding: $bo-select-padding;
+  background-image: $bo-select-background-image;
+  background-size: $bo-select-background-image-size;
+  text-align: $bo-select-text-align;
+  &:focus {
+    outline: $bo-select-outline; // remove default button outline
+  }
+}
+
+bo-select {
+  .customSelect {
+    position: relative;
+
+    button {
+      @include bo-select-style;
+      // Foundation adds the 'hover' class when the select is *open*
+      // This is a bit confusing since it's also an element state...
+      &.hover {
+        background-color: $bo-select-open-background-color;
+      }
+    }
+
+    .dropdown-pane {
+      @include dropdown-container;
+      @include button-expand(true);
+
+      ul {
+        list-style: none;
+        margin: 0;
+
+        & > li {
+          // So that our check icon is positioned properly within the li
+          position: relative;
+          margin: $bo-select-option-margin;
+          color: $bo-select-option-color;
+          background-color: $bo-select-option-background-color;
+          padding: ($bo-select-option-height - 1rem) / 2;
+
+          &:hover {
+            background-color: $bo-select-option-hover-background-color;
+          }
+
+          a {
+            color: $bo-select-option-color;
+            padding-left: $bo-select-option-a-padding-left;
+          }
+
+          i:before {
+            color: $bo-select-option-icon-color;
+            position: absolute;
+            top: 50%;
+            left: $bo-select-option-icon-left;
+            transform: translateY(-50%);
+          }
+
+          // Hover styles overwrite our border-radius. Fix here.
+          &:first-child {
+            border-top-left-radius: $bo-select-border-radius;
+            border-top-right-radius: $bo-select-border-radius;
+          }
+          &:last-child {
+            border-bottom-left-radius: $bo-select-border-radius;
+            border-bottom-right-radius: $bo-select-border-radius;
+          }
+        }
+      }
+    }
+  }
+
+  select.nativeSelect {
+    @include bo-select-style;
+  }
+}
+
+/**************************************************************************************************
+ bo-progress-meter
+**************************************************************************************************/
+bo-progress-meter {
+  .progress-meter {
+    border-top-left-radius: $bo-progress-meter-radius;
+    border-bottom-left-radius: $bo-progress-meter-radius;
+    border-top-right-radius: $bo-progress-meter-inner-radius;
+    border-bottom-right-radius: $bo-progress-meter-inner-radius;
+    transition: $bo-progress-meter-transition;
+  }
+
+  &.secondary .progress-meter {
+    background-color: $secondary-color;
+  }
+
+  &.success .progress-meter {
+    background-color: $success-color;
+  }
+
+  &.warning .progress-meter {
+    background-color: $warning-color;
+  }
+
+  &.alert .progress-meter {
+    background-color: $alert-color;
+  }
+}
+

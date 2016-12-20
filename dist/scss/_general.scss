@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+.bo-aria-hidden {
+  @include element-invisible;
+}
+
+@mixin boxShadow($inset, $x, $y, $blur, $spread, $r, $g, $b, $alpha) {
+  @if $inset != '' {
+    -moz-box-shadow: $inset $x $y $blur $spread rgba($r, $g, $b, $alpha);
+    -webkit-box-shadow: $inset $x $y $blur $spread rgba($r, $g, $b, $alpha);
+    box-shadow: $inset $x $y $blur $spread rgba($r, $g, $b, $alpha);
+  } @else {
+    -moz-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $alpha);
+    -webkit-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $alpha);
+    box-shadow: $x $y $blur $spread rgba($r, $g, $b, $alpha);
+  }
+}
+
+@mixin boxSizing($type) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}

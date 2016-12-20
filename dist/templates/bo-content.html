@@ -1,0 +1,11 @@
+<div class="bo-view-content" snap-content snap-options="state.snap">
+  <div class="bo-content-wrapper">
+    <div class="bo-dragger" snap-dragger></div>
+
+    <div ng-if="state.open" class="bo-view-cover"></div>
+
+    <div class="bo-view-wrapper">
+      <ng-transclude></ng-transclude>
+    </div>
+  </div>
+</div>

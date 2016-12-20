@@ -1,0 +1,87 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+/**************************************************************************************************
+ bo-side-menu
+**************************************************************************************************/
+
+bo-content {
+  .bo-content-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    overflow-x: hidden;
+  }
+
+  .bo-view-cover {
+    min-height: 100%;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 4;
+  }
+
+  .bo-view-content {
+    background-color: white;
+    -webkit-box-shadow: -0.5rem 0 1.5rem 0 rgba(0,0,0,0.5);
+    -moz-box-shadow: -0.5rem 0 1.5rem 0 rgba(0,0,0,0.5);
+    box-shadow: -0.5rem 0 1.5rem 0 rgba(0,0,0,0.5);
+    min-height: 100%;
+  }
+
+  .bo-dragger {
+    position: fixed;
+    min-height: 100%;
+    top: 1rem;
+    left: 0;
+    bottom: 0;
+    width: 1rem;
+    z-index: 3;
+  }
+
+  .bo-view-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 2;
+  }
+}
+
+bo-side-menu {
+  & > bo-side-item {
+    display: none;
+  }
+
+  .bo-side-menu {
+    $lightness: 100 - lightness($black);
+    background-color: lighten($black, $lightness * 0.5);
+
+    & > ul {
+      & > li {
+        & > a.bo-menu-item {
+          color: $white;
+        }
+
+        & > a.bo-menu-item:hover {
+          background-color: lighten($black, $lightness * 0.3);
+          color: $white;
+        }
+
+        & > a.bo-menu-item:active,
+        & > a.bo-menu-item:focus,
+        & > a.bo-menu-item.active {
+          background-color: lighten($black, $lightness * 0.64);
+          color: $black;
+        }
+      }
+    }
+  }
+}

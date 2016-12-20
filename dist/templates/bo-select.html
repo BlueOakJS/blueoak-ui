@@ -1,0 +1,24 @@
+<!-- Use custom select implementation when on desktop -->
+<div ng-if="!showNativeSelect" class="row collapse">
+	<div class="customSelect small-12 columns">
+		<button ng-click="toggleDropdown()" data-toggle="selectDropdown-{{name}}" aria-controls="selectDropdown-{{name}}">{{selected.label}}</button>
+		<div id="selectDropdown-{{name}}" class="dropdown-pane" data-dropdown data-auto-focus="true" data-close-on-click="true" data-hover-pane="true">
+			<ul>
+			  <li ng-repeat="option in options" ng-click="onOptionSelect(option)">
+			  	<i ng-if="selected.value === option.value" class="bo-icon-check"/>
+			  	<a>{{option.label}}</a>
+			  </li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- Use native select implementation when available -->
+<select ng-if="showNativeSelect" class="nativeSelect" name="{{ name }}" ng-model="selected">
+	<option ng-repeat="option in options" value="{{ option.value }}">{{option.label}}</option>
+</select>
+

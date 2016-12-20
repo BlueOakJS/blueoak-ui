@@ -1,0 +1,119 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+$bo-font-path: "../fonts" !default;
+
+$bo-icon-badge: "\e900";
+$bo-icon-check: "\e901";
+$bo-icon-checkbox-selected: "\e902";
+$bo-icon-checkbox: "\e903";
+$bo-icon-chevron-down: "\e904";
+$bo-icon-chevron-right: "\e905";
+$bo-icon-close: "\e906";
+$bo-icon-drop-arrow: "\e907";
+$bo-icon-magnifying-glass: "\e908";
+$bo-icon-plus: "\e909";
+$bo-icon-menu: "\e90a";
+$bo-icon-minus: "\e90b";
+$bo-icon-radio-selected: "\e90c";
+$bo-icon-radio: "\e90d";
+
+@font-face {
+    font-family: 'bo-icons';
+    src:    url('#{$bo-font-path}/bo-icons.eot?jb80gg');
+    src:    url('#{$bo-font-path}/bo-icons.eot?jb80gg#iefix') format('embedded-opentype'),
+        url('#{$bo-font-path}/bo-icons.ttf?jb80gg') format('truetype'),
+        url('#{$bo-font-path}/bo-icons.woff?jb80gg') format('woff'),
+        url('#{$bo-font-path}/bo-icons.svg?jb80gg#bo-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="bo-icon-"], [class*=" bo-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'bo-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bo-icon-badge {
+    &:before {
+        content: $bo-icon-badge;
+    }
+}
+.bo-icon-check {
+    &:before {
+        content: $bo-icon-check;
+    }
+}
+.bo-icon-checkbox-selected {
+    &:before {
+        content: $bo-icon-checkbox-selected;
+    }
+}
+.bo-icon-checkbox {
+    &:before {
+        content: $bo-icon-checkbox;
+    }
+}
+.bo-icon-chevron-down {
+    &:before {
+        content: $bo-icon-chevron-down;
+    }
+}
+.bo-icon-chevron-right {
+    &:before {
+        content: $bo-icon-chevron-right;
+    }
+}
+.bo-icon-close {
+    &:before {
+        content: $bo-icon-close;
+    }
+}
+.bo-icon-drop-arrow {
+    &:before {
+        content: $bo-icon-drop-arrow;
+    }
+}
+.bo-icon-magnifying-glass {
+    &:before {
+        content: $bo-icon-magnifying-glass;
+    }
+}
+.bo-icon-plus {
+    &:before {
+        content: $bo-icon-plus;
+    }
+}
+.bo-icon-menu {
+    &:before {
+        content: $bo-icon-menu;
+    }
+}
+.bo-icon-minus {
+    &:before {
+        content: $bo-icon-minus;
+    }
+}
+.bo-icon-radio-selected {
+    &:before {
+        content: $bo-icon-radio-selected;
+    }
+}
+.bo-icon-radio {
+    &:before {
+        content: $bo-icon-radio;
+    }
+}
+

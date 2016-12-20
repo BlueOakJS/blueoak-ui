@@ -1,0 +1,102 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+bo-notification {
+    display: none !important;
+}
+
+.bo-notification {
+    display: inline-block;
+
+    position: absolute;
+    top: -$bo-notification-offscreen;
+
+    width: 100%;
+    background-color: white;
+    height: $bo-notification-height;
+    z-index: #{$reveal-zindex + 1};
+
+    &[position="bottom"] {
+        top: auto;
+        bottom: -$bo-notification-offscreen;
+    }
+
+    &.show-notification {
+        top: 0;
+
+        &[position="bottom"] {
+            top: auto;
+            bottom: 0;
+        }
+    }
+
+    .title {
+        height: rem-calc(52);
+        padding: rem-calc(14) rem-calc(16);
+        width: 100%;
+        background-color: lighten($primary-color, 48);
+        font-size: rem-calc(24);
+        line-height: 1;
+    }
+
+    transition: $bo-notification-transition-duration linear all;
+
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
+}
+
+bo-close-notification {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: $bo-notification-title-height;
+    width: $bo-notification-title-height;
+
+    button {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+    }
+}
+
+.bo-overlay {
+    @include reveal-overlay();
+}
+
+.off-canvas, .off-canvas-content, .off-canvas-wrapper, .off-canvas-wrapper-inner {
+    height: 100%;
+}
+
+bo-main-content {
+    width: 100%;
+    height: 100%;
+}
+
+.off-canvas {
+    padding-top: 19px;
+    padding-bottom: 19px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+}
+
+.bo-side-menu-item {
+    display: inline-block;
+    width: 100%;
+    font-size: 24px;
+
+    a {
+        display: inline-block;
+        width: 100%;
+        color: $white;
+        padding: 19px 30px;
+    }
+}
+

@@ -1,0 +1,11 @@
+<div class="progress"
+     role="progressbar"
+     tabindex="0"
+     ng-attr-aria-valuenow="{{ aria.value }}"
+     ng-attr-aria-valuemin="{{ aria.min }}"
+     ng-attr-aria-valuetext="{{ aria.text }}"
+     ng-attr-aria-valuemax="{{ aria.max }}">
+  <div class="progress-meter" ng-style="{width: value * 100 + '%'}"}>
+    <p class="progress-meter-text" ng-transclude></p>
+  </div>
+</div>

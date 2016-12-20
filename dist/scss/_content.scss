@@ -1,0 +1,336 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+/**************************************************************************************************
+ bo-blocklist
+**************************************************************************************************/
+bo-blocklist {
+  font-size: $bo-blocklist-font-size;
+
+  & div.bo-blocklist-title {
+    background-color: $bo-blocklist-color;
+    color: foreground($bo-blocklist-color);
+    min-height: $bo-blocklist-item-height;
+    padding: $bo-blocklist-padding;
+  }
+
+  & ul.bo-blocklist-ul {
+    margin: 0;
+
+    & > li {
+      min-height: $bo-blocklist-item-height;
+      list-style-type: none;
+      border-bottom: 1px solid $bo-blocklist-color;
+      padding: $bo-blocklist-padding;
+      color: $bo-blocklist-color;
+
+      &.linked {
+        background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 26" enable-background="new 0 0 16 26" xml:space="preserve"><polygon fill="#707070" points="2.6,0.3 0.5,2.4 11.2,13.1 0.7,23.6 2.8,25.7 15.5,13.1 "/></svg>');
+        background-repeat: no-repeat;
+        background-size: 16px 26px;
+        background-position: right $bo-blocklist-padding top 50%;
+      }
+    }
+  }
+}
+
+/**************************************************************************************************
+ bo-card
+**************************************************************************************************/
+div.bo-card {
+  margin: $bo-card-margin;
+
+  & .bo-card-image {
+    background-color: lighten($primary-color, 30);
+    border-top-right-radius: $global-radius;
+    border-top-left-radius: $global-radius;
+    padding: $bo-card-image-padding;
+    text-align: center;
+
+    & img {
+      // If padding is removed from the image,
+      // we still want the border radius effect
+      @if ($bo-card-image-padding == 0)  {
+        border-top-left-radius: $global-radius;
+        border-top-right-radius: $global-radius;
+      }
+    }
+  }
+
+  & .bo-card-header {
+    background-color: lighten($bo-card-background-color, 10);
+    padding: $bo-card-header-padding;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      font-weight: $bo-card-header-font-weight;
+      color: foreground($bo-card-background-color);
+    }
+  }
+
+  & .bo-card-content {
+    border-bottom-right-radius: $global-radius;
+    border-bottom-left-radius: $global-radius;
+    padding: $bo-card-content-padding;
+    background-color: lighten($bo-card-background-color, 50);
+    color: $bo-card-background-color;
+  }
+
+  // FFS6 color support
+  @each $name, $color in $foundation-palette {
+    @if $name != primary {
+      &.#{$name} {
+        & .bo-card-image {
+          background-color: lighten($color, 30);
+        }
+
+        & .bo-card-header {
+          background-color: lighten($color, 10);
+
+          h1, h2, h3, h4, h5, h6 {
+            color: foreground($color);
+          }
+        }
+
+        & .bo-card-content {
+          background-color: lighten($color, 35);
+          color: $bo-card-background-color;
+        }
+      }
+    }
+  }
+}
+
+/**************************************************************************************************
+ bo-badge
+**************************************************************************************************/
+.bo-badge {
+  @include badge;
+
+  @each $name, $color in $foundation-palette {
+    @if $name != primary {
+      &.#{$name} {
+        background-color: $color;
+        color: foreground($color);
+      }
+    }
+    @else {
+      background-color: $color;
+      color: foreground($color);
+    }
+  }
+
+  &.large {
+    font-size: rem-calc($bo-badge-font-size-large);
+  }
+
+  &.xlarge {
+    font-size: rem-calc($bo-badge-font-size-xlarge);
+  }
+}
+
+/**************************************************************************************************
+ bo-tabs
+**************************************************************************************************/
+
+bo-tabs {
+  display: block;
+  font-size: 0;
+
+  bo-tab {
+    float: left;
+  }
+
+  bo-tab-content {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+.tabs {
+  font-size: 0; // deal with extra pixels added from floating divs
+  display: inline-block;
+}
+
+.tabs.vertical {
+  bo-tab, .tabs-title {
+    width: 100%;
+  }
+}
+
+.tabs-title {
+  &:focus,
+  &[aria-selected='true'] {
+    outline: none;
+  }
+
+  & > a {
+    font-size: $bo-tab-item-font-size;
+    color: $bo-tab-item-color;
+
+    &:focus,
+    &[aria-selected='true'] {
+      outline: none;
+      color: $bo-tab-item-active;
+    }
+  }
+}
+
+/**************************************************************************************************
+ bo-accordion
+**************************************************************************************************/
+bo-accordion {
+  display: inline-block;
+  width: 100%;
+
+  .accordion {
+    border-radius: $bo-accordion-border-radius;
+    border: $bo-accordion-border;
+  }
+
+  .accordion-title {
+    font-size: $bo-accordion-item-font-size;
+
+    &:before {
+      font-family: 'bo-icons';
+      content: $bo-icon-plus;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover, &:focus {
+      color: $accordion-item-color;
+    }
+  }
+
+  .is-active {
+    .accordion-title:before {
+      content: $bo-icon-minus;
+    }
+  }
+
+  .accordion-content {
+    font-size: $bo-accordion-content-font-size;
+  }
+}
+
+
+/**************************************************************************************************
+ bo-list-item
+**************************************************************************************************/
+.row-list-item {
+
+  position: relative;
+  padding: 0.5rem 2.125rem 0.5rem 1rem;
+  right: 0rem;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    &.activeNav {
+      background-color: lighten(#DDD, 5%) !important;
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: white;
+  }
+
+  &:nth-child(odd) {
+    background-color: #F1F1F1;
+  }
+
+  .swipe-action {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -5rem;
+    width: 5rem;
+    z-index: 10;
+
+    background-color: #CCC;
+    text-align: center;
+    outline: none;
+
+    .fa, .list-item-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      left: 0;
+      width: 100%;
+
+      color: white;
+      font-size: 2.5rem;
+
+      &.fa-spin {
+        margin-top: -25%;
+        transform: initial;
+      }
+
+    }
+  }
+}
+
+div {
+  &.with-chevron {
+    &:after {
+      content: '\0047';
+      font-family: 'bo-icons';
+      color: #DDD;
+      font-size: 1.5rem;
+      font-weight: normal;
+      position: absolute;
+      right: 1.125rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+/**************************************************************************************************
+ bo-topbar
+**************************************************************************************************/
+
+.top-bar .bo-menu-item a {
+  color: $bo-topbar-link-color;
+}
+
+.top-bar {
+    color: $bo-topbar-color;
+    font-size: $bo-topbar-font-size;
+    height: $bo-topbar-height;
+    line-height: $bo-topbar-height;
+    position: relative;
+    overflow: hidden;
+
+    .top-bar-title {
+        font-weight: bold;
+        float: none;
+        margin: 0;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .fa {
+        min-width: 0;
+        height: $bo-topbar-height;
+        width: $bo-topbar-height;
+        margin: 0;
+
+        &:before {
+            font-size: $bo-topbar-icon-size;
+        }
+    }
+}
+
+

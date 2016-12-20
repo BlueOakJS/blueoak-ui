@@ -1,0 +1,230 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+// BlueOak UI Settings
+// --------==---------
+
+// Table of Contents:
+//
+// Content:
+//   1. bo-blocklist
+//   2. bo-card
+//   3. bo-badge
+//   4. bo-tabs
+//   5. bo-accordion
+//   6. bo-topbar
+//
+// Controls:
+//   7. bo-button
+//   8. bo-button-group
+//   9. bo-radio-group, bo-checkbox-group
+//   10. bo-input
+//   11. bo-search
+//   12. bo-switch
+//   13. bo-slider
+//   14. bo-select
+//   15. bo-progress-meter
+//
+// Callouts:
+//   16. bo-modal
+//   17. bo-notification
+//
+// Layout:
+//   18. bo-panel-top
+//   19. bo-panel-side
+//   20. bo-panel-bottom
+//
+// Navigation:
+//   21. bo-menu-bar-horizontal, bo-menu-bar-vertical
+//   22. bo-menu-bar-groups
+//   23. bo-title-bar
+//   24. bo-action-sheet
+
+
+// Content:
+// -------
+/**************************************************************************************************
+  1. bo-blocklist
+**************************************************************************************************/
+// $bo-blocklist-item-height: rem-calc(60px);
+// $bo-blocklist-color: $primary-color;
+// $bo-blocklist-font-size: rem-calc(24px);
+// $bo-blocklist-padding: rem-calc(16px);
+
+/**************************************************************************************************
+  2. bo-card
+**************************************************************************************************/
+// $bo-card-margin: 0;
+// $bo-card-background-color: $primary-color;
+// $bo-card-header-font-weight: bold;
+// $bo-card-image-padding: rem-calc(10px);
+// $bo-card-header-padding: rem-calc(10px);
+// $bo-card-content-padding: rem-calc(10px);
+
+/**************************************************************************************************
+  3. bo-badge
+**************************************************************************************************/
+// $bo-badge-font-size-large: 12px;
+// $bo-badge-font-size-xlarge: 16px;
+
+/**************************************************************************************************
+  4. bo-tabs
+**************************************************************************************************/
+// $bo-tab-item-font-size: rem-calc(24);
+// $bo-tab-item-active: darken($primary-color, 10);
+// $bo-tab-item-color: $white;
+
+/**************************************************************************************************
+  5. bo-accordion
+**************************************************************************************************/
+// $bo-accordion-item-font-size: rem-calc(24);
+// $bo-accordion-content-font-size: rem-calc(24);
+// $bo-accordion-border-radius: 0;
+// $bo-accordion-border: none;
+
+/**************************************************************************************************
+  6. bo-topbar
+**************************************************************************************************/
+// $bo-topbar-link-color: foreground($primary-color);
+// $bo-topbar-color: $white;
+// $bo-topbar-icon-size: 1.5rem;
+// $bo-topbar-icon-padding: #{$bo-topbar-icon-size / 3} #{$bo-topbar-icon-size / 3};
+// $bo-topbar-font-size: rem-calc(16);
+// $bo-topbar-height: 3rem;
+
+// Controls:
+// --------
+/**************************************************************************************************
+  7. bo-button
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+  8. bo-button-group
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+  9. bo-radio-group, bo-checkbox-group
+**************************************************************************************************/
+// $bo-radio-label-margin: 0 rem-calc(27) 0 rem-calc(10);
+// $bo-radio-label-color: $primary-color;
+// $bo-radio-icon-color: $primary-color;
+// $bo-radio-icon-size: rem-calc(27);
+
+// $bo-checkbox-label-margin: $bo-radio-label-margin;
+// $bo-checkbox-label-color: $bo-radio-label-color;
+// $bo-checkbox-icon-color: $bo-radio-icon-color;
+// $bo-checkbox-icon-size: $bo-radio-icon-size;
+
+
+/**************************************************************************************************
+  10. bo-input
+**************************************************************************************************/
+// $bo-input-placeholder-style: normal;
+// $bo-input-placeholder-color: scale-color($primary-color, $lightness: 30%);
+// $bo-input-padding: $form-spacing / 2 rem-calc(14);
+
+/**************************************************************************************************
+  11. bo-search
+**************************************************************************************************/
+// $bo-search-placeholder-style: italic;
+// $bo-search-placeholder-color: $bo-input-placeholder-color;
+// $bo-search-border: 2px solid $black;
+// $bo-search-border-focus: 2px solid $black;
+// $bo-search-icon-padding-left: rem-calc(10);
+// $bo-search-icon-padding-right: rem-calc(10);
+// $bo-search-font-size: $input-font-size;
+// $bo-search-icon-size: $bo-search-font-size;
+
+/**************************************************************************************************
+  12. bo-switch
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+  13. bo-slider
+**************************************************************************************************/
+// $bo-slider-radius: rem-calc(6.5px);
+// $bo-slider-box-shadow: 1px 1px 1px rgba($primary-color, 0.4);
+
+/**************************************************************************************************
+  14. bo-select
+**************************************************************************************************/
+// $bo-select-height: rem-calc(42);
+// $bo-select-option-height: $bo-select-height;
+// $bo-select-background-color: $white;
+// $bo-select-color: $primary-color;
+// $bo-select-hover-background-color: $white;
+// $bo-select-border-radius: $global-radius;
+// $bo-select-text-align: left;
+// $bo-select-outline: none;
+// $bo-select-open-background-color: darken($white, 10);
+// $bo-select-background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 31 14" enable-background="new 0 0 31 14" xml:space="preserve"> <polygon fill="#373737" points="9.3,0.5 18.5,0.5 13.9,7 9.3,13.6 4.7,6.9 0.1,0.5 "/></svg>');
+// $bo-select-padding: rem-calc(8) rem-calc(12);
+// $bo-select-background-image-size: 23px 23px;
+// $bo-select-option-background-color: $primary-color;
+// $bo-select-option-margin: 0;
+// $bo-select-option-color: $white;
+// $bo-select-option-hover-background-color: lighten($primary-color, 30);
+// Select option icon/anchor settings
+// $bo-select-option-icon-left: rem-calc(7);
+// $bo-select-option-a-padding-left: rem-calc(16);
+// $bo-select-option-icon-color: $white;
+
+/**************************************************************************************************
+  15. bo-progress-meter
+**************************************************************************************************/
+// $bo-progress-meter-radius: $progress-radius;
+// $bo-progress-meter-inner-radius: 0;
+// $bo-progress-meter-transition: 300ms linear width;
+
+
+// Callouts:
+// --------
+/**************************************************************************************************
+  16. bo-modal
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+  17. bo-notification
+**************************************************************************************************/
+// $bo-notification-transition-duration: 300ms;
+// $bo-notification-title-height: 52px;
+// $bo-notification-height: 200px + $bo-notification-title-height;
+// $bo-notification-offscreen: 25px + $bo-notification-height;
+
+// Layout:
+// ------
+/**************************************************************************************************
+  18. bo-panel-top
+**************************************************************************************************/
+// $bo-header-height: $bo-topbar-height;
+
+/**************************************************************************************************
+  19. bo-panel-side
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+  20. bo-panel-bottom
+**************************************************************************************************/
+// $bo-footer-height: $bo-header-height;
+
+// Navigation:
+// ----------
+/**************************************************************************************************
+  21. bo-menu-bar-horizontal, bo-menu-bar-vertical
+**************************************************************************************************/
+// $bo-menu-background-color: $topbar-background;
+// $bo-menu-color: foreground($bo-menu-background-color);
+// $bo-menu-font-weight: $global-weight-normal;
+// $bo-menu-dropdown-gap: 1px;
+// $bo-menu-dropdown-border-radius: $global-radius;
+// $bo-menu-use-custom-arrow: true;
+// $bo-menu-item-text-align: left;
+// $bo-menu-title-font-weight: $global-weight-bold;
+
